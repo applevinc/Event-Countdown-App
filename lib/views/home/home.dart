@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
               child: Center(
                 child: (_eventList.state.events.isEmpty)
                     ? Text(
-                        'YOU HAVE NO SET EVENTS',
+                        'YOU HAVE NO SET EVENTS HERE',
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w300,
