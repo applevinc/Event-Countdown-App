@@ -2,7 +2,7 @@ import 'package:countdown_timer/theme/ThemePreference.dart';
 import 'package:flutter/material.dart';
 
 class ThemeProvider {
-  ThemeData _themeData = lightTheme;
+  ThemeData _themeData = darkTheme;
 
   ThemeData get getTheme => _themeData;
 
@@ -13,7 +13,7 @@ class ThemeProvider {
   void changeTheme() {
     if (_themeData == darkTheme) {
       _themeData = lightTheme;
-    } else{
+    } else {
       _themeData = darkTheme;
     }
   }

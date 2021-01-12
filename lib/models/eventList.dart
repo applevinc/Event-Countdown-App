@@ -8,4 +8,8 @@ class EventList {
   void add(Event event) {
     events.add(event);
   }
+
+  void delete(int index){
+    events.removeAt(index);
+  }
 }

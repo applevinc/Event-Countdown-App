@@ -12,6 +12,7 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return AppBar(
       title: Text(
         'EVENT COUNTDOWN',
@@ -25,7 +26,8 @@ class CustomAppBar extends StatelessWidget {
           value: isSwitched,
           onChanged: onChanged,
           activeColor: Color(0xff202020),
-          activeTrackColor: Color(0xfff5f5f5),
+          activeTrackColor: Color(0xff202020),
+          inactiveTrackColor: Color(0xff202020),
         ),
       ],
     );

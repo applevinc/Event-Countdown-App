@@ -7,7 +7,6 @@ final darkTheme = ThemeData(
   accentColor: Color(0xfff5f5f5),
   accentIconTheme: IconThemeData(color: Colors.black),
   iconTheme: IconThemeData(color: Colors.white),
-  
 );
 
 final lightTheme = ThemeData(

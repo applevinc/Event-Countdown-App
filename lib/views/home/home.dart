@@ -73,20 +73,31 @@ class _HomePageState extends State<HomePage> {
                     : ListView.builder(
                         itemCount: _eventList.state.events.length,
                         itemBuilder: (context, index) {
-                          return EventCard(
-                            eventName: _eventList.state.events[index].name,
-                            daysCountdown: _eventList.state.events[index].days.toString(),
-                            hoursCountdown: _eventList.state.events[index].hours.toString(),
-                            minutesCountdown: _eventList.state.events[index].minutes.toString(),
-                            secondsCountdown: _eventList.state.events[index].seconds.toString(),
-                            editEvent: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => EditEventPage(index: index),
+                          return Dismissible(
+                            key: UniqueKey(),
+                            onDismissed: (direction) {
+                              _eventList.setState((s) => s.delete(index));
+                              Scaffold.of(context).showSnackBar(
+                                SnackBar(
+                                  content: Text('${_eventList.state.events[index].name} event deleted'),
                                 ),
                               );
                             },
+                            child: EventCard(
+                              eventName: _eventList.state.events[index].name,
+                              daysCountdown: _eventList.state.events[index].days.toString(),
+                              hoursCountdown: _eventList.state.events[index].hours.toString(),
+                              minutesCountdown: _eventList.state.events[index].minutes.toString(),
+                              secondsCountdown: _eventList.state.events[index].seconds.toString(),
+                              editEvent: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => EditEventPage(index: index),
+                                  ),
+                                );
+                              },
+                            ),
                           );
                         },
                       ),
